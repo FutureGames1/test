@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: #050e2d;
+}
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background-color: black;
+  padding: 16px 32px;
+  border-bottom: 3px solid var blueviolet;
+}
+h1 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.idk {
+   display: block;
+   position: relative;
+   z-index: 1;
+   user-select: none;
+   appearance: none;
+   border: none;
+   outline: none;
+   background: none;
+   cursor: pointer;
+}
+.idk span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 6px;
+  z-index: 1;
+  transform-origin: 0 0;
+  transition: 0.4s;
+}
+.idk:hover span:nth-child(2) {
+     transform: translateX(10px);
+     background-color: indigo;
+}
+.idk.is-active span:nth-child(1){
+  transform: translate(0px, -2px) rotate(45deg);
+
+}
+.idk.is-active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(15px);
+}
+.idk.is-active span:nth-child(3) {
+  transform: translate(-3px, 3px) rotate(-45deg);
+}
+.idk.is-active:hover span {
+  background-color: #8c38ff;
+}
+
+.menu {
+    display: none;
+    flex: 1 1 0%;
+     justify-content: flex-end;
+     margin: 0 -16px;
+}
+.menu a {
+  color: #fff;
+  margin: 0 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.4s;
+  padding: 8px 16px;
+  border-radius: 99px;
+}
+.menu a.is-active, .menu a:hover {
+   background-color: #8c38ff;
+}
+@media (min-width: 768px) {
+  .idk {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+}
+
+/* Home Banner */
+
+.banner{
+   position: relative;
+   width: 100%;
+   min-height: 100vh;
+   padding: 0px 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.banner .bg{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner .bg .content{
+  width: 50%;
+  height: 100%;
+}
+.banner .bg .content h2{
+  font-size: 3em;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.banner .bg .content p{
+  font-size: 1em;
+  color: #dbd9d9;
+  letter-spacing: 1px;
+}
+.rainbow-button {
+  position: relative;
+  width: 165px;
+  height: 60px;
+  background-image: linear-gradient(90deg, #1E00FF, #FF0061 12%, #E1FF00 24%, #00FF9E 36%, #1E00FF 48%, #FF0061 60%, #E1FF00 72%, #00FF9E 84%, #1E00FF 100%);
+  background-size: 200%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: bold;
+}
+.rainbow-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+  background-color: #191919;
+}
+.rainbow-button:after {
+  content: attr(alt);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(90deg, #1E00FF, #FF0061 12%, #E1FF00 24%, #00FF9E 36%, #1E00FF 48%, #FF0061 60%, #E1FF00 72%, #00FF9E 84%, #1E00FF 100%);
+  background-size: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.rainbow-button:hover {
+  animation: slidebg 4s linear infinite;
+}
+a {
+  text-decoration:none;
+  color:#FFF;
+}
+
+.rainbow-button:hover:after {
+  animation: slidebg 4s linear infinite reverse;
+  color: transparent;
+}
+
+@keyframes slidebg {
+  to {
+    background-position-x: 200%;
+  }
+}
+
+.banner .bg img{
+  width: 600px;
+}
+
+
+
+
+
+
+	
+	
+
+
+footer {
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .social_icon, footer .menu {
+  position: relative;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  margin: 10px 0;
+}
+
+footer .social_icon li, footer .menu li {
+  list-style: none;
+}
+footer .social_icon li a {
+  font-size: 2em;
+  color: #ccc;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+footer .social_icon li a:hover {
+  transform: translateY(-15px);
+  color: blue;
+}
+
+footer .menu li a {
+  font-size: 1.2em;
+  color: #ccc;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+}
+footer .menu li a:hover {
+  opacity: 1;
+  color: #fff;
+}
+p {
+  color : #eee;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+/*wave and animation*/
+footer .wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(https://i.ibb.co/rZt4Nhg/wave.png);
+  background-size: 1000px 100px;
+}
+
+footer .wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWave 4s linear infinite;
+}
+
+footer .wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animateWave_02 4s linear infinite;
+}
+footer .wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 0;
+  animation: animateWave 3s linear infinite;
+}
+
+footer .wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animateWave_02 3s linear infinite;
+}
+
+@keyframes animateWave {
+  0%{
+    background-position-x: 1000px; 
+  }
+  100%{
+    background-position-x: 0px; 
+  }
+}
+
+@keyframes animateWave_02 {
+  0%{
+    background-position-x: 0px; 
+  }
+  100%{
+    background-position-x: 1000px; 
+  }
+}
+
+
+
+
+
+
+
